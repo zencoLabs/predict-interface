@@ -3,6 +3,7 @@ import { BetButton } from "@modules/BetButton";
 import { fromDripToCfx, numberFormat } from "@utils/number";
 import { ReactComponent as CrownIcon } from "@assets/icons/crown.svg";
 import { ReactComponent as WinIcon } from "@assets/icons/win.svg";
+import { OptionLogo } from "@modules/OptionLogo";
 
 export interface PredictionOption {
   name: string;
@@ -24,7 +25,7 @@ export const VoteOption: React.FC<{
     <div className="pt-40px relative">
       <div className="w-80px h-80px absolute top-0 left-16px z-1">
         {isWin && <CrownIcon className="absolute top--28px left--10px" />}
-        <img className="w-full h-full rounded-full" src={logo} />
+        <OptionLogo className="w-full h-full rounded-full" src={logo} />
       </div>
       <Card className="relative">
         {isWin && (
