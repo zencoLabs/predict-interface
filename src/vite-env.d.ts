@@ -4,6 +4,7 @@
 interface ImportMetaEnv {
   readonly VITE_ESpaceRpcUrl: string;
   readonly VITE_ESpaceScanUrl: string;
+  readonly VITE_ESpaceChainID: string;
 }
 
 interface ImportMeta {

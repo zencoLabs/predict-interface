@@ -7,7 +7,7 @@ import { useAuthConnect, AuthConnectStatus } from "./useAuthConnect";
 export { AuthConnectStatus } from "./useAuthConnect";
 
 export const Network = {
-  chainId: isProduction ? "1030" : "71",
+  chainId: import.meta.env.VITE_ESpaceChainID,
   chainName: isProduction ? "Conflux eSpace" : "Conflux eSpace (Testnet)",
   rpcUrls: [import.meta.env.VITE_ESpaceRpcUrl],
   blockExplorerUrls: [import.meta.env.VITE_ESpaceScanUrl],
