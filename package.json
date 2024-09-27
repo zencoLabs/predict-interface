@@ -5,22 +5,32 @@
   "type": "module",
   "scripts": {
     "build": "tsc -b && vite build",
-    "dev": "vite",
+    "build:testnet": "tsc -b && vite build --mode development",
+    "dev": "vite --host",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@cfx-kit/dapp-utils": "^0.2.4",
-    "@cfx-kit/react-utils": "^0.0.39",
+    "@cfx-kit/react-utils": "^0.0.40",
     "@cfx-kit/ui-components": "^0.0.17",
+    "@cfxjs/use-wallet-react": "^0.0.2-6",
     "@zag-js/dialog": "0.19.1",
     "@zag-js/react": "0.19.1",
-    "antd": "^5.20.6",
+    "buffer": "^6.0.3",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
     "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.53.0",
+    "react-router-dom": "^6.26.2",
+    "recoil": "^0.7.7"
+  },
+  "engines": {
+    "npm": ">=9.8.1",
+    "node": ">=18.18.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

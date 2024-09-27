@@ -60,7 +60,6 @@ const AuthConnectButton: React.FC<Props> = ({
   ...props
 }) => {
   const { account, authConnectStatus } = useAuthConnect();
-  console.log("authConnectStatus", authConnectStatus);
 
   if (
     authConnectStatus === AuthConnectStatus.Connected ||

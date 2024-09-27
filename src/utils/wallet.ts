@@ -6,6 +6,7 @@ import {
 } from "@cfx-kit/react-utils/dist/AccountManagePlugins";
 import MetaMaskIcon from "@assets/wallets/metamask.svg";
 import FluentEthereumIcon from "@assets/wallets/fluent.svg";
+import { isMobile } from "./is";
 // import WalletConnectIcon from "@assets/wallets/wallet-connect.svg";
 
 // If you want to use wallet-connect, please apply for the relevant configuration yourself
@@ -23,7 +24,7 @@ import FluentEthereumIcon from "@assets/wallets/fluent.svg";
 
 const allProviders = [
   // WalletConnectProvider,
-  FluentEthereumProvider,
+  !isMobile && FluentEthereumProvider,
   MetaMaskProvider,
 ] as const;
 
@@ -33,13 +34,8 @@ export const iconConfig = {
   // WalletConnect: WalletConnectIcon,
 } as const;
 
-export const walletsConfig = allProviders.map((provider) => ({
-  name: provider.walletName,
-  iconPath: iconConfig[provider.walletName as "Ethereum"],
-}));
-
 (function () {
   allProviders.forEach((provider) => {
-    registerWallet(provider);
+    provider && registerWallet(provider);
   });
 })();

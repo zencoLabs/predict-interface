@@ -1,25 +1,16 @@
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import { Prediction } from "./pages/Prediction";
-import { ConfigProvider } from "antd";
-const router = createBrowserRouter([
-  {
-    path: "/prediction/:id",
-    element: <Prediction />,
-  },
-  {
-    path: "*",
-    // TODO
-    element: <Navigate to="/prediction/0" replace />,
-  },
-]);
+import { BrowserRouter } from "react-router-dom";
+import { RecoilRoot } from "recoil";
+import { HelmetProvider } from "react-helmet-async";
+import AppRouter from "./router";
 
-const App = () => <ConfigProvider theme={{components: {
-  Table: {
-    cellPaddingBlock: 0,
-    cellPaddingInline: 0,
-  }
-}}} >
-  <RouterProvider router={router} />
-</ConfigProvider>;
+const App = () => (
+  <HelmetProvider>
+    <RecoilRoot>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </RecoilRoot>
+  </HelmetProvider>
+);
 
 export default App;
