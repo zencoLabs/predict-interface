@@ -61,7 +61,7 @@ export const MulticallContract = createContract({
 });
 export const PredictionContract = createContract({
   address: isProduction
-    ? "0x7584D0A350B92B8Bc5ef797cf45006dBF11d31C1"
+    ? "0xD7a71227A19a6474a9E96AA6388B4b934A08e05E"
     : "0x7584D0A350B92B8Bc5ef797cf45006dBF11d31C1",
   ABI: PredictionABI,
 });
