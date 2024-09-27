@@ -27,7 +27,7 @@ button.absolute {
 
 button.button.is-disabled:not(.is-loading),
 a.button.is-disabled:not(.is-loading) {
-  @apply bg-[#D7D7D7] border-transparent text-white-normal;
+  @apply bg-gray-90 border-transparent text-white-normal;
 }
 
 a.button--text.is-disabled,
@@ -50,7 +50,7 @@ button.button--text.is-disabled {
 /* primary contained button */
 .button--contained.button--primary:not(.is-disabled),
 .button--contained.button--primary.is-loading {
-  @apply text-#191818 bg-#FAE62F;
+  @apply text-gray-100 bg-yellow-100;
 }
 
 /* text button */
@@ -59,12 +59,12 @@ button.button--text.is-disabled {
 }
 
 .button--text.button--primary {
-  @apply bg-transparent bg-opacity-100 text-#191818;
+  @apply bg-transparent bg-opacity-100 text-gray-100;
 }
 
 .button--text.button--primary:hover,
 .button--text.button--primary:focus-visible {
-  @apply bg-#FAE62F bg-opacity-85;
+  @apply bg-yellow-100 bg-opacity-85;
 }
 
 /* outlined button */

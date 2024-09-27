@@ -10,6 +10,7 @@ import { disabledScroll, enableScroll } from "@utils/dom";
 
 export const Drawer: React.FC<{
   title?: string;
+  onOpen?: () => void;
   onClose?: () => void;
   open?: boolean;
   trigger?: ({
@@ -18,7 +19,7 @@ export const Drawer: React.FC<{
     triggerProps: Omit<HTMLAttributes<HTMLElement>, "color">;
   }) => JSX.Element;
   children?: (({ close }: { close: VoidFunction }) => JSX.Element) | ReactNode;
-}> = ({ children, title, open = false, trigger, onClose }) => {
+}> = ({ children, title, open = false, trigger, onOpen, onClose }) => {
   const [visible, setVisible] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
   const drawerIdRef = useRef(Math.random());
@@ -47,24 +48,27 @@ export const Drawer: React.FC<{
             triggerProps: {
               onClick: () => {
                 setVisible(true);
+                onOpen?.();
               },
             },
           })
         : null}
       {visible && (
-        <div className="fixed top-0 left-0 w-100vw h-100vh z-1000">
+        <div className="fixed top-0 left-0 w-100vw h-100vh z-80">
           <div
-            className="w-full h-full bg-#000 opacity-70"
+            className="w-full h-full bg-black-normal opacity-70"
             onClick={handleClose}
           ></div>
           <div
-            className="fixed bottom-0 left-0 w-full p-24px bg-#262525 rounded-tl-24px rounded-tr-24px overflow-hidden"
+            className="fixed bottom-0 left-0 w-full p-24px bg-gray-90 rounded-tl-24px rounded-tr-24px overflow-hidden"
             ref={drawerRef}
           >
             <div className="flex-vertical-center justify-between mb-24px">
-              <div className="text-(#FFF 20px) font-600 lh-28px">{title}</div>
+              <div className="text-(white-normal 20px) font-600 lh-28px">
+                {title}
+              </div>
               <CloseIcon
-                className="text-#FFF cursor-pointer"
+                className="text-white-normal cursor-pointer"
                 onClick={handleClose}
               />
             </div>

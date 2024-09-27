@@ -39,7 +39,23 @@ export default defineConfig({
       "2xl": "1536px",
       "3xl": "1920px",
     },
-    colors: {},
+    colors: {
+      black: {
+        normal: "#000000",
+      },
+      white: {
+        normal: "#FFFFFF",
+      },
+      yellow: {
+        100: "#FAE62F",
+      },
+      gray: {
+        100: "#191818",
+        90: "#262525",
+        80: "#A3A3A3",
+        60: "#D1D1D1",
+      },
+    },
     boxShadow: {
       normal: "0px 6px 16px 0px #00000014",
     },

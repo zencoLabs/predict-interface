@@ -27,7 +27,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
           className={cx(
             "input text-16px lh-24px font-600",
             className,
-            disabled ? "text-#746F6F" : "text-#FFF"
+            disabled ? "text-#746F6F" : "text-white-normal"
           )}
           autoComplete="off"
           disabled={disabled}
