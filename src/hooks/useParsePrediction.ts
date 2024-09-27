@@ -24,22 +24,30 @@ export const useParsePrediction = (
     const outcome = Number(_outcome);
     const totalVotes = optionVotes.reduce((sum, cur) => sum + cur, 0n);
     let leftPercent = Unit.fromMinUnit(100);
+    const voteMap = new Map<number, bigint>();
+    _options.forEach((_, i) => {
+      if (!Unit.equals(optionVotes[i], 0)) {
+        voteMap.set(i, optionVotes[i]);
+      }
+    });
     const options: PredictionOption[] = _options.map((option, i) => {
+      const vote = voteMap.get(i) ?? 0n;
+      voteMap.delete(i);
       const percentUnit =
-        i < _options.length - 1
-          ? Unit.fromMinUnit(optionVotes[i]).mul(100).div(totalVotes)
+        voteMap.size > 0
+          ? Unit.fromMinUnit(vote).mul(100).div(totalVotes)
           : Unit.fromDecimal(leftPercent);
       const percent = Math.floor(Number(percentUnit.toDecimalMinUnit()));
       leftPercent = leftPercent.sub(percent);
       return {
         name: option,
         logo: optionLogos[i],
-        votes: optionVotes[i],
+        votes: vote,
         totalVotes,
         percent: percent === 0 || isNaN(percent) ? "-" : String(percent),
         odds: calcOdds({
           totalVotes,
-          optionVote: optionVotes[i],
+          optionVote: vote,
         }),
         index: i,
         isWin: outcome === i,
