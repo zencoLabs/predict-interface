@@ -1,0 +1,122 @@
+/** common **/
+.button {
+  @apply relative inline-flex justify-center items-center whitespace-nowrap outline-none transition-colors transition-opacity font-medium no-underline cursor-pointer;
+}
+
+button.button {
+  flex: 0 0 auto;
+}
+
+button.absolute {
+  position: absolute;
+}
+
+.button--fullWidth {
+  @apply flex w-full;
+}
+
+/** disabled & loading **/
+.button.is-disabled,
+.button.is-loading {
+  @apply pointer-events-none;
+}
+
+.is-loading {
+  @apply hover:opacity-90;
+}
+
+button.button.is-disabled:not(.is-loading),
+a.button.is-disabled:not(.is-loading) {
+  @apply bg-[#D7D7D7] border-transparent text-white-normal;
+}
+
+a.button--text.is-disabled,
+button.button--text.is-disabled {
+  @apply bg-transparent !text-gray-light;
+}
+
+/* contained button */
+.button--contained {
+  @apply border-none;
+}
+
+.button--contained:hover:not(.is-disabled),
+.button--contained:hover:not(.is-loading),
+.button--contained:focus-visible:not(.is-disabled),
+.button--contained:focus-visible:not(.is-loading) {
+  @apply bg-opacity-95;
+}
+
+/* primary contained button */
+.button--contained.button--primary:not(.is-disabled),
+.button--contained.button--primary.is-loading {
+  @apply text-#191818 bg-#FAE62F;
+}
+
+/* text button */
+.button--text {
+  @apply border-none;
+}
+
+.button--text.button--primary {
+  @apply bg-transparent bg-opacity-100 text-#191818;
+}
+
+.button--text.button--primary:hover,
+.button--text.button--primary:focus-visible {
+  @apply bg-#FAE62F bg-opacity-85;
+}
+
+/* outlined button */
+.button--outlined {
+  @apply bg-transparent;
+}
+
+.button__content {
+  @apply inline-flex items-center h-full;
+}
+
+/** loading **/
+.is-loading > .button__content,
+.is-loading > .button__icon {
+  @apply opacity-0;
+}
+
+.button__loading {
+  @apply !absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-1.6em;
+}
+
+/** start end icon **/
+.button__icon + .button__content {
+  @apply ml-[.25em];
+}
+
+.button__content + .button__icon {
+  @apply ml-[.25em];
+}
+
+.button__icon {
+  @apply w-fit h-fit;
+}
+
+.button__icon > svg {
+  @apply w-[1.6em] h-[1.6em];
+}
+
+/** click effect **/
+.button::after {
+  @apply absolute inset-0 rounded-[inherit] opacity-0;
+  box-shadow: 0 0 0 6px currentColor;
+  transition: 0.4s;
+  content: '';
+}
+
+.button.button:active:not(.button--text):not(.button--link)::after {
+  @apply opacity-60;
+  box-shadow: none;
+  transition: 0s;
+}
+
+.button--contained.button--orange::after {
+  box-shadow: 0 0 0 6px #d0d0e5;
+}

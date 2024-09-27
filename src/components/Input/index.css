@@ -1,0 +1,27 @@
+.input-wrapper {
+  @apply relative inline-flex w-full h-fit;
+}
+
+.input {
+  @apply w-full bg-transparent border-none transition-colors;
+  color: inherit;
+  font-size: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none !important;
+  margin: 0;
+}
+
+input {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
