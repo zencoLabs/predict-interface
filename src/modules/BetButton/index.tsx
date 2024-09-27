@@ -18,6 +18,7 @@ import {
   useRefreshUserVotes,
 } from "../../services/prediction";
 import { useParams } from "react-router-dom";
+import { OptionLogo } from "@modules/OptionLogo";
 
 type Status = "input" | "waiting" | "submitted" | "failed";
 
@@ -86,13 +87,17 @@ const Bet: React.FC<{
     <form onSubmit={handleSubmit}>
       <div className="flex-center flex-col gap-12px mb-24px">
         <div className="w-84px h-84px rounded-full overflow-hidden">
-          <img className="w-full h-full" src={option.logo} />
+          <OptionLogo className="w-full h-full" src={option.logo} />
         </div>
-        <div className="text-(white-normal 24px) font-700 lh-32px">{option.name}</div>
+        <div className="text-(white-normal 24px) font-700 lh-32px">
+          {option.name}
+        </div>
       </div>
       <div className="flex flex-col gap-7px mb-24px">
         <div className="flex justify-between">
-          <div className="text-(white-normal 14px) font-400 lh-22px">Amount</div>
+          <div className="text-(white-normal 14px) font-400 lh-22px">
+            Amount
+          </div>
           <div className="text-(gray-80 12px) font-400 lh-20px">
             1 CFX = 1 Vote
           </div>

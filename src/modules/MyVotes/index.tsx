@@ -10,6 +10,7 @@ import { fromDripToCfx, numberFormat } from "@utils/number";
 import { Unit } from "@cfxjs/use-wallet-react/ethereum";
 import { calcReturns } from "@utils/prediction";
 import { Claim } from "@modules/Claim";
+import { OptionLogo } from "@modules/OptionLogo";
 
 const TableTitle: React.FC<{ title: string }> = ({ title }) => (
   <div className="text-(gray-80 12px) font-400 lh-20px">{title}</div>
@@ -44,7 +45,7 @@ const Content: React.FC<
             key={i}
           >
             <div className="w-24px h-24px mr-8px rounded-full overflow-hidden">
-              <img className="w-full h-full" src={option.logo} />
+              <OptionLogo className="w-full h-full" src={option.logo} />
             </div>
             {option.name}
           </div>
