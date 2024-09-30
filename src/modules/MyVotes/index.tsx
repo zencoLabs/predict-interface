@@ -82,7 +82,7 @@ const Content: React.FC<
       <div className="text-(white-normal 14px) font-600 lh-22px mb-12px">
         My Votes
       </div>
-      <Claim claimable={claimable} />
+      {claimable && <Claim />}
       <Card
         className={clsx(
           "flex justify-between",

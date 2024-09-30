@@ -83,7 +83,7 @@ export const Prediction: React.FC<{
           ))}
         </div>
         <MyVotes claimable={claimable} options={options} feeRatio={feeRatio} />
-        <Rules />
+        <Rules feeRatio={feeRatio} />
       </div>
     </>
   );

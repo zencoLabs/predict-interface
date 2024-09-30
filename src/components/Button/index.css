@@ -27,12 +27,12 @@ button.absolute {
 
 button.button.is-disabled:not(.is-loading),
 a.button.is-disabled:not(.is-loading) {
-  @apply bg-gray-90 border-transparent text-white-normal;
+  @apply bg-gray-80 border-transparent text-white-normal;
 }
 
 a.button--text.is-disabled,
 button.button--text.is-disabled {
-  @apply bg-transparent !text-gray-light;
+  @apply bg-transparent !text-gray-90;
 }
 
 /* contained button */
