@@ -43,7 +43,7 @@ export const calcReturns = ({
   minNum?: number;
 }) => {
   const returnsUnit = Unit.fromMinUnit(totalVotes)
-    .mul(feeRatio)
+    .mul(Unit.sub(1, feeRatio))
     .mul(userVote)
     .div(optionVote)
     .add(userVote)

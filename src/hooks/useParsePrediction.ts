@@ -60,8 +60,7 @@ export const useParsePrediction = (
       name,
       description,
       claimable: outcome < options.length,
-      feeRatio: Unit.fromMinUnit(BASE_FEE_RATIO)
-        .sub(feeRatio)
+      feeRatio: Unit.fromMinUnit(feeRatio)
         .div(BASE_FEE_RATIO)
         .toDecimalMinUnit(),
     };

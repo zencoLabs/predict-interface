@@ -1,4 +1,4 @@
-let disabledSet = new Set();
+const disabledSet = new Set();
 
 export const disabledScroll = (id: number) => {
   disabledSet.add(id);

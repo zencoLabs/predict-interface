@@ -59,8 +59,7 @@ const Query = memo(() => {
   return <Content claimInfo={claimInfo} />;
 });
 
-export const Claim: React.FC<{ claimable: boolean }> = ({ claimable }) => {
-  if (!claimable) return null;
+export const Claim: React.FC = () => {
   return (
     <Suspense fallback={null}>
       <Query />
