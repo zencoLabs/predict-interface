@@ -10,6 +10,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
 * {
   box-sizing: border-box;
   outline: none;
@@ -24,7 +25,7 @@ body {
   text-align: center;
 }
 
- 
+
 .zc-container {
   width: 100%;
   padding-right: 15px;
@@ -32,18 +33,19 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
- 
+
 .zc-container .text-content {
   text-align: center;
-  background-image: -webkit-linear-gradient(290deg, #2a2a2a, #383838);
+  /* background-image: -webkit-linear-gradient(290deg, #2a2a2a, #383838);
   background-image: -o-linear-gradient(290deg, #2a2a2a, #383838);
-  background-image: linear-gradient(160deg, #2a2a2a, #383838);
+  background-image: linear-gradient(160deg, #2a2a2a, #383838); */
   padding: 100px 30px;
   width: 100%;
   border-radius: 10px;
   position: relative;
   z-index: 2;
 }
+
 .zc-container .text-content:after {
   position: absolute;
   content: '';
@@ -51,23 +53,27 @@ body {
   top: 30px;
   bottom: 30px;
   right: 30px;
-  border: 1px dashed rgba(233, 236, 53, 0.5);
-  border-radius: 10px;
+  /* border: 1px dashed rgba(233, 236, 53, 0.5);
+  border-radius: 10px; */
   z-index: -1;
 }
 
 .zc-container .text-content h1 {
-  font-size: 24px; 
+  font-size: 24px;
 }
+
 .zc-container h1 {
-  color: #fff; 
+  color: #fff;
   /* text-transform: uppercase; */
-  font-weight: 700; 
+  font-weight: 700;
 }
 
 .zc-bet-btn-base {
-  background: #fae62f; 
+  background: #fae62f;
+  text-decoration: none;
+  outline: none;
 }
+
 .zc-bet-btn {
   /* background: #ddd; */
   display: inline-block;
@@ -78,58 +84,77 @@ body {
   font-weight: 500;
   line-height: 50px;
   border-radius: 6px;
-  letter-spacing: 0.5px; 
+  letter-spacing: 0.5px;
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
-a, a:hover, a:focus, a:active {
-  text-decoration: none;
-  outline: none;
+
+ 
+
+.zc-animations {
+  left: 0;
+  bottom: -30%;
 }
 
 @media (min-width: 576px) {
-  .landing-page { 
-    margin-top: 50px; 
-  } 
-  .zc-container {
-      max-width: 500px;
+  .landing-page {
+    margin-top: 50px;
   }
+
+  .zc-container {
+    max-width: 500px;
+  }
+
   .zc-container .text-content h1 {
-    font-size: 28px; 
+    font-size: 28px;
   }
 }
+
 @media (min-width: 768px) {
-  .landing-page { 
-    margin-top: 50px; 
-  } 
-  .zc-container {
-      max-width: 620px;
+  .landing-page {
+    margin-top: 50px;
   }
+
+  .zc-container {
+    max-width: 620px;
+  }
+
   .zc-container .text-content h1 {
-    font-size: 32px; 
+    font-size: 32px;
   }
 }
+
 @media (min-width: 992px) {
-  .landing-page { 
-    margin-top: 100px; 
+  .landing-page {
+    margin-top: 100px;
   }
+
   .zc-container {
-      max-width: 860px;
+    max-width: 860px;
   }
+
   .zc-container .text-content h1 {
-    font-size: 40px; 
+    font-size: 40px;
+  }
+
+  .zc-animations {
+    left: -25%;
+    bottom: -25%;
   }
 }
+
 @media (min-width: 1200px) {
-  .landing-page { 
-    margin-top: 120px; 
+  .landing-page {
+    margin-top: 120px;
   }
+
   .zc-container {
-      max-width: 1040px;
+    max-width: 1040px;
   }
+
   .zc-container .text-content h1 {
-    font-size: 45px; 
+    font-size: 45px;
   }
 }
