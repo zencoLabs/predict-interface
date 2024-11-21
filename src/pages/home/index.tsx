@@ -32,7 +32,8 @@ const HomePage: React.FC = () => {
           <div className="zc-container">
             <div className="text-content">
               <h1>Zenco—The First Conflux Prediction Market and SocialFi</h1>
-              <Link className="zc-bet-btn zc-bet-btn-base" to="/prediction/0">Go to Prediction</Link>
+              {/* <Link className="zc-bet-btn zc-bet-btn-base" to="/prediction/0">Go to Prediction</Link> */}
+              <Link className="zc-bet-btn zc-bet-btn-base" to="/markets">Go to Prediction</Link>
             </div>
 
           </div>

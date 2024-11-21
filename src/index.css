@@ -98,6 +98,14 @@ body {
   bottom: -30%;
 }
 
+.zc-bet-martet { 
+  text-decoration: none;
+  outline: none;
+  color:#fff;
+  /* font-weight: 700; */
+  /* font-size: large; */
+}
+
 @media (min-width: 576px) {
   .landing-page {
     margin-top: 50px;

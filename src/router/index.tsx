@@ -4,6 +4,7 @@ import Spin from "@cfx-kit/ui-components/dist/Spin";
 import TopLevelErrorBoundary from "@modules/TopLevelErrorBoundary";
 import PredictionPage from "@pages/Prediction";
 import HomePage from "@pages/home";
+import MarketsPage from "@pages/markets";
 
 const AppRouter: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const AppRouter: React.FC = () => {
         <Route path="/" element={<RouteWrapper />}>
           <Route path="/prediction/:id" element={<PredictionPage />}></Route>
           <Route path="/home" element={<HomePage />} />
+          <Route path="/markets" element={<MarketsPage />} />
           <Route path="/" element={<Navigate to="/home" replace />} />
           {/* <Route path="/" element={<Navigate to="/prediction/0" replace />} /> */}
           <Route path="*" element={<Navigate to="/" replace />} />
