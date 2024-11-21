@@ -1,8 +1,7 @@
 import { Header } from "@modules/Header";
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
-import clsx from "clsx";
+import { Link } from "react-router-dom"; 
 import electricalSVG from "@assets/images/electrical-system_dark.svg";
 
 const HomePage: React.FC = () => {
