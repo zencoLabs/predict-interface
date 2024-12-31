@@ -49,7 +49,7 @@ const MarketsPage: React.FC = () => {
   ];
 
 
-  const [formattedData, setFormattedData] = useState<{ name: string, isEnded: boolean }[]>([]);
+  const [formattedData, setFormattedData] = useState<{ index: number, name: string, isEnded: boolean }[]>([]);
 
   useEffect(() => {
     queryMarkets()
@@ -63,16 +63,17 @@ const MarketsPage: React.FC = () => {
       const list = await prediContract.getPredictions().catch()
 
       const predictionData = []
-      for (let index = 0; index < list.length; index++) {
+      for (let index = list.length - 1; index >= 0; index--) {
         const rs = list[index];
         const model = {
+          index: parseInt(rs.index),
           name: rs.name,
           isEnded: parseInt(BigNumber.from(rs.endTime).toString()) < currentTimestamp
         };
         predictionData.push(model)
       }
 
-      console.log(predictionData)
+      // console.log(predictionData)
       setFormattedData(predictionData)
     } catch (error) {
       console.log(error)
@@ -137,10 +138,10 @@ const MarketsPage: React.FC = () => {
                 {
                   item.isEnded ?
                     <Link className="text-(gray 16px) font-700 lh-24px web-(text-20px lh-28px)"
-                      to="/prediction/0"> {item.name}</Link>
+                      to={`/prediction/${item.index}`}> {item.name}</Link>
                     :
                     <Link className="text-(white-normal 16px) font-700 lh-24px web-(text-20px lh-28px)"
-                      to="/prediction/1"> {item.name} </Link>
+                      to={`/prediction/${item.index}`}> {item.name} </Link>
                 }
 
               </div>
